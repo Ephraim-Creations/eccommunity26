@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { BackToTop } from './components/BackToTop';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Guidelines } from './pages/Guidelines';
@@ -9,13 +10,23 @@ import { Join } from './pages/Join';
 import { Store } from './pages/Store';
 import { ProductDetails } from './pages/ProductDetails';
 
-// Scroll to top on route change
+// Scroll to top on route change, or scroll to hash element
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (hash) {
+      // Add a small delay to ensure the element is rendered/animated in before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(hash.replace('#', ''));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
 
   return null;
 };
@@ -37,6 +48,7 @@ const App: React.FC = () => {
           </Routes>
         </main>
         <Footer />
+        <BackToTop />
       </div>
     </Router>
   );

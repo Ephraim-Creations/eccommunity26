@@ -26,6 +26,7 @@ export interface SocialLink {
 }
 
 export interface GroupCard {
+  id: string;
   title: string;
   description: string;
   icon: LucideIcon;

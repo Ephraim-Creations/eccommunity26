@@ -37,7 +37,7 @@ export const Home: React.FC = () => {
                 EC Community is the digital heartbeat for creators and developers. Join a network where ideas turn into reality and passion meets purpose.
               </p>
               <div className="pt-4">
-                <Button to="/join" variant="primary" className="text-lg px-8 py-4">
+                <Button to="/guidelines" variant="primary" className="text-lg px-8 py-4">
                   Join the Community
                 </Button>
               </div>
@@ -49,14 +49,16 @@ export const Home: React.FC = () => {
             <div className="bg-white/10 dark:bg-black/40 backdrop-blur-md border border-white/20 dark:border-white/10 p-8 rounded-3xl shadow-2xl max-w-md mx-auto md:mr-0">
               <h3 className="text-2xl font-bold text-white mb-2">Get Early Access</h3>
               <p className="text-gray-300 mb-6 text-sm">Join our newsletter to get updates on new groups and events.</p>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-4" action="https://formsubmit.co/eccommunity254@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New Early Access Request (Hero)" />
+                <input type="hidden" name="_captcha" value="false" />
                 <div>
                   <label className="block text-gray-300 text-sm font-medium mb-1">Name</label>
-                  <input type="text" className="w-full bg-black/20 dark:bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all" placeholder="John Doe" />
+                  <input type="text" name="name" className="w-full bg-black/20 dark:bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all" placeholder="John Doe" required />
                 </div>
                 <div>
                   <label className="block text-gray-300 text-sm font-medium mb-1">Email</label>
-                  <input type="email" className="w-full bg-black/20 dark:bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all" placeholder="john@example.com" />
+                  <input type="email" name="email" className="w-full bg-black/20 dark:bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all" placeholder="john@example.com" required />
                 </div>
                 <Button type="submit" fullWidth variant="primary" className="mt-2">
                   Subscribe
@@ -131,7 +133,7 @@ export const Home: React.FC = () => {
                   <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
                     {group.description}
                   </p>
-                  <Button variant="outline" className="dark:border-gray-600 dark:text-gray-300 group-hover:bg-brand-600 dark:group-hover:bg-brand-600 group-hover:text-white group-hover:border-brand-600 dark:group-hover:border-brand-600">
+                  <Button to={`/about#${group.id}`} variant="outline" className="dark:border-gray-600 dark:text-gray-300 group-hover:bg-brand-600 dark:group-hover:bg-brand-600 group-hover:text-white group-hover:border-brand-600 dark:group-hover:border-brand-600">
                     Explore Space <ArrowRight size={18} className="ml-2" />
                   </Button>
                 </div>
@@ -176,11 +178,15 @@ export const Home: React.FC = () => {
                 <p className="text-brand-100">Get the latest tech news and community updates delivered to your inbox.</p>
               </div>
               <div className="w-full md:w-auto flex-1 max-w-md">
-                <form className="flex flex-col sm:flex-row gap-3" onSubmit={(e) => e.preventDefault()}>
+                <form className="flex flex-col sm:flex-row gap-3" action="https://formsubmit.co/eccommunity254@gmail.com" method="POST">
+                  <input type="hidden" name="_subject" value="New Newsletter Subscription (Footer Strip)" />
+                  <input type="hidden" name="_captcha" value="false" />
                   <input 
                     type="email" 
+                    name="email"
                     placeholder="Enter your email" 
                     className="flex-1 px-5 py-3 rounded-full focus:outline-none text-gray-900 dark:bg-gray-900 dark:text-white dark:border dark:border-gray-700"
+                    required
                   />
                   <button type="submit" className="bg-gray-900 text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-black transition-colors shadow-lg">
                     Subscribe

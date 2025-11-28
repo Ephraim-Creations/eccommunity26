@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
                 </li>
               ))}
               <li>
-                <Link to="/join" className="text-gray-400 hover:text-brand-400 transition-colors">
+                <Link to="/guidelines" className="text-gray-400 hover:text-brand-400 transition-colors">
                   Join Now
                 </Link>
               </li>
@@ -64,13 +64,17 @@ export const Footer: React.FC = () => {
           {/* Mini Newsletter */}
           <div>
             <h3 className="font-bold text-lg mb-4 text-gray-200">Stay Updated</h3>
-            <form className="flex flex-col gap-3" onSubmit={(e) => e.preventDefault()}>
+            <form className="flex flex-col gap-3" action="https://formsubmit.co/eccommunity254@gmail.com" method="POST">
+              <input type="hidden" name="_subject" value="New Newsletter Subscription (Footer)" />
+              <input type="hidden" name="_captcha" value="false" />
               <div className="relative">
                 <Mail className="absolute left-3 top-3 text-gray-500" size={18} />
                 <input 
                   type="email" 
+                  name="email"
                   placeholder="Enter your email" 
                   className="w-full bg-gray-800 dark:bg-gray-900 text-white pl-10 pr-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm border border-gray-700 dark:border-gray-800"
+                  required
                 />
               </div>
               <button className="bg-brand-600 hover:bg-brand-700 text-white py-2.5 rounded-lg font-medium text-sm transition-colors">

@@ -82,7 +82,12 @@ export const Guidelines: React.FC = () => {
       <section className="text-center container mx-auto px-6">
         <FadeIn>
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Ready to uphold our values?</h2>
-          <Button to="/join" variant="primary" className="shadow-xl shadow-brand-200 dark:shadow-brand-900/30">
+          <Button 
+            href="https://chat.whatsapp.com/JzuXZ3TdXGOFwcsI9h2znx"
+            target="_blank"
+            variant="primary" 
+            className="shadow-xl shadow-brand-200 dark:shadow-brand-900/30"
+          >
             I Agree - Join Now
           </Button>
         </FadeIn>

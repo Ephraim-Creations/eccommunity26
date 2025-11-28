@@ -30,6 +30,18 @@ export const Header: React.FC = () => {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
@@ -67,7 +79,7 @@ export const Header: React.FC = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         
         {/* Left Section: Logo + Theme Toggle */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 relative z-50">
           <Link to="/" className={logoTextClass}>
             <img 
               src="https://www.ephraimworks.online/images/favicon.png" 
@@ -103,7 +115,7 @@ export const Header: React.FC = () => {
             </Link>
           ))}
           <Button 
-            to="/join" 
+            to="/guidelines" 
             variant={scrolled || !isHome ? 'primary' : 'white'}
             className="ml-4"
           >
@@ -113,7 +125,7 @@ export const Header: React.FC = () => {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden z-50 focus:outline-none"
+          className="md:hidden z-50 focus:outline-none relative"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? (
@@ -124,7 +136,7 @@ export const Header: React.FC = () => {
         </button>
 
         {/* Mobile Menu Overlay */}
-        <div className={`fixed inset-0 bg-white dark:bg-gray-950 z-40 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:hidden`}>
+        <div className={`fixed top-0 left-0 w-screen h-[100dvh] bg-white dark:bg-gray-950 z-40 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:hidden`}>
           <div className="flex flex-col h-full justify-center items-center gap-8 p-6">
             {NAV_ITEMS.map((item) => (
               <Link 
@@ -135,7 +147,7 @@ export const Header: React.FC = () => {
                 {item.label}
               </Link>
             ))}
-             <Button to="/join" variant="primary" fullWidth className="max-w-xs mt-4">
+             <Button to="/guidelines" variant="primary" fullWidth className="max-w-xs mt-4">
               Join Now
             </Button>
           </div>

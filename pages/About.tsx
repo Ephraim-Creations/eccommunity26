@@ -1,7 +1,8 @@
 import React from 'react';
 import { FadeIn } from '../components/FadeIn';
 import { Button } from '../components/Button';
-import { COMMUNITY_GROUPS, SOCIALS } from '../constants';
+import { SOCIALS } from '../constants';
+import { Code2, Lightbulb, ArrowRight } from 'lucide-react';
 
 export const About: React.FC = () => {
   return (
@@ -40,31 +41,83 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Activities (What We Do) */}
-      <section className="bg-gray-50 dark:bg-gray-900 py-20 transition-colors duration-300">
+      {/* Devs Hub Section */}
+      <section id="devs-hub" className="bg-gray-50 dark:bg-gray-900 py-24 transition-colors duration-300">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">What We Do</h2>
-            <p className="text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
-              We provide dedicated spaces for you to excel, whether you are coding your next masterpiece or seeking industry wisdom.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {COMMUNITY_GROUPS.map((group, idx) => (
-              <FadeIn key={group.title} delay={idx * 150} direction="up">
-                <div className="bg-white dark:bg-gray-800 p-10 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all duration-300 h-full flex flex-col items-center text-center">
-                  <div className="bg-brand-50 dark:bg-brand-900/20 p-6 rounded-2xl mb-6 text-brand-600 dark:text-brand-400">
-                    <group.icon size={40} />
+          <FadeIn>
+            <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+              {/* Content */}
+              <div className="md:w-1/2 order-2 md:order-1">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="bg-brand-100 dark:bg-brand-900/30 p-2.5 rounded-xl">
+                    <Code2 className="text-brand-600 dark:text-brand-400" size={28} />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{group.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
-                    {group.description}
-                  </p>
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Devs Hub</h2>
                 </div>
-              </FadeIn>
-            ))}
-          </div>
+                <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-8">
+                  A dedicated space for developers to share code, debug together, and collaborate on open-source projects. Whether you are a beginner looking for guidance on your first PR or an expert architecting complex systems, the Devs Hub is your technical home.
+                </p>
+                <ul className="space-y-3 mb-8 text-gray-700 dark:text-gray-300">
+                  <li className="flex items-center gap-2"><ArrowRight size={16} className="text-brand-500" /> Code Reviews & Pair Programming</li>
+                  <li className="flex items-center gap-2"><ArrowRight size={16} className="text-brand-500" /> Hackathon Teaming</li>
+                  <li className="flex items-center gap-2"><ArrowRight size={16} className="text-brand-500" /> Tech Stack Debates</li>
+                </ul>
+                <Button to="/guidelines" variant="primary" className="shadow-lg shadow-brand-200 dark:shadow-brand-900/40">
+                  Join Devs Hub
+                </Button>
+              </div>
+              {/* Image */}
+              <div className="md:w-1/2 order-1 md:order-2">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-800">
+                  <img 
+                    src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1000&auto=format&fit=crop" 
+                    alt="Devs Hub Coding Setup" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Insights Room Section */}
+      <section id="insights-room" className="bg-white dark:bg-gray-950 py-24 transition-colors duration-300">
+        <div className="container mx-auto px-6">
+          <FadeIn>
+            <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+              {/* Image */}
+              <div className="md:w-1/2">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-800">
+                  <img 
+                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop" 
+                    alt="Insights Room Discussion" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </div>
+              {/* Content */}
+              <div className="md:w-1/2">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="bg-brand-100 dark:bg-brand-900/30 p-2.5 rounded-xl">
+                    <Lightbulb className="text-brand-600 dark:text-brand-400" size={28} />
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Insights Room</h2>
+                </div>
+                <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-8">
+                  Deep discussions on tech trends, career advice, and industry news. The Insights Room is where we look beyond the code to understand the ecosystem. Share your knowledge, learn from peers, and get mentorship on navigating your career path.
+                </p>
+                <ul className="space-y-3 mb-8 text-gray-700 dark:text-gray-300">
+                  <li className="flex items-center gap-2"><ArrowRight size={16} className="text-brand-500" /> Career Growth Strategies</li>
+                  <li className="flex items-center gap-2"><ArrowRight size={16} className="text-brand-500" /> Industry News Analysis</li>
+                  <li className="flex items-center gap-2"><ArrowRight size={16} className="text-brand-500" /> Guest Speaker Sessions</li>
+                </ul>
+                <Button to="/guidelines" variant="primary" className="shadow-lg shadow-brand-200 dark:shadow-brand-900/40">
+                  Join Insights Room
+                </Button>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -121,7 +174,7 @@ export const About: React.FC = () => {
                   <img 
                     src="https://www.ephraimworks.online/images/Ephraim.png" 
                     alt="Ephraim Mutwiri" 
-                    className="relative z-10 rounded-3xl w-full object-cover bg-gray-50 dark:bg-gray-800"
+                    className="relative z-10 rounded-3xl w-full object-cover"
                   />
                 </div>
               </div>

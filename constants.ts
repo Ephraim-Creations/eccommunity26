@@ -23,11 +23,13 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const COMMUNITY_GROUPS: GroupCard[] = [
   {
+    id: 'devs-hub',
     title: 'Devs Hub',
     description: 'A dedicated space for developers to share code, debug together, and collaborate on open-source projects.',
     icon: Code2,
   },
   {
+    id: 'insights-room',
     title: 'Insights Room',
     description: 'Deep discussions on tech trends, career advice, and industry news. Share your knowledge and learn from peers.',
     icon: Lightbulb,

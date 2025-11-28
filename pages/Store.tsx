@@ -4,7 +4,7 @@ import { FadeIn } from '../components/FadeIn';
 import { Button } from '../components/Button';
 import { PRODUCTS } from '../constants';
 
-const ITEMS_PER_PAGE = 9;
+const ITEMS_PER_PAGE = 6;
 
 const parsePrice = (priceStr: string) => {
   return parseInt(priceStr.replace(/[^0-9]/g, ''), 10);
