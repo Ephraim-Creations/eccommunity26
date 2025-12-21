@@ -2,7 +2,7 @@ import React from 'react';
 import { FadeIn } from '../components/FadeIn';
 import { Button } from '../components/Button';
 import { SOCIALS } from '../constants';
-import { Code2, Lightbulb, ArrowRight } from 'lucide-react';
+import { Code2, BookOpen, ArrowRight } from 'lucide-react';
 
 export const About: React.FC = () => {
   return (
@@ -81,8 +81,8 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Insights Room Section */}
-      <section id="insights-room" className="bg-white dark:bg-gray-950 py-24 transition-colors duration-300">
+      {/* Learners Hub Section */}
+      <section id="learners-hub" className="bg-white dark:bg-gray-950 py-24 transition-colors duration-300">
         <div className="container mx-auto px-6">
           <FadeIn>
             <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
@@ -91,7 +91,7 @@ export const About: React.FC = () => {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-800">
                   <img 
                     src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop" 
-                    alt="Insights Room Discussion" 
+                    alt="Learners Hub Training" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   />
                 </div>
@@ -100,20 +100,20 @@ export const About: React.FC = () => {
               <div className="md:w-1/2">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="bg-brand-100 dark:bg-brand-900/30 p-2.5 rounded-xl">
-                    <Lightbulb className="text-brand-600 dark:text-brand-400" size={28} />
+                    <BookOpen className="text-brand-600 dark:text-brand-400" size={28} />
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Insights Room</h2>
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Learners Hub</h2>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-8">
-                  Deep discussions on tech trends, career advice, and industry news. The Insights Room is where we look beyond the code to understand the ecosystem. Share your knowledge, learn from peers, and get mentorship on navigating your career path.
+                  Specifically designed for our members undergoing training. The Learners Hub is a structured environment where we nurture talent from the ground up. If you are part of our training program, this is your primary space for guided growth, practical learning, and direct feedback.
                 </p>
                 <ul className="space-y-3 mb-8 text-gray-700 dark:text-gray-300">
-                  <li className="flex items-center gap-2"><ArrowRight size={16} className="text-brand-500" /> Career Growth Strategies</li>
-                  <li className="flex items-center gap-2"><ArrowRight size={16} className="text-brand-500" /> Industry News Analysis</li>
-                  <li className="flex items-center gap-2"><ArrowRight size={16} className="text-brand-500" /> Guest Speaker Sessions</li>
+                  <li className="flex items-center gap-2"><ArrowRight size={16} className="text-brand-500" /> Structured Learning Paths</li>
+                  <li className="flex items-center gap-2"><ArrowRight size={16} className="text-brand-500" /> Mentorship & Guidance</li>
+                  <li className="flex items-center gap-2"><ArrowRight size={16} className="text-brand-500" /> Project-Based Training</li>
                 </ul>
                 <Button to="/guidelines" variant="primary" className="shadow-lg shadow-brand-200 dark:shadow-brand-900/40">
-                  Join Insights Room
+                  Join Learners Hub
                 </Button>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import { 
   Code2, 
-  Lightbulb, 
+  BookOpen, 
   Users, 
   Zap, 
   ShieldCheck, 
@@ -10,7 +10,8 @@ import {
   Video,
   Heart,
   Globe,
-  Smile
+  Smile,
+  Lightbulb
 } from 'lucide-react';
 import { BenefitItem, GroupCard, NavItem, Product, RuleItem, SocialLink } from './types';
 
@@ -29,10 +30,10 @@ export const COMMUNITY_GROUPS: GroupCard[] = [
     icon: Code2,
   },
   {
-    id: 'insights-room',
-    title: 'Insights Room',
-    description: 'Deep discussions on tech trends, career advice, and industry news. Share your knowledge and learn from peers.',
-    icon: Lightbulb,
+    id: 'learners-hub',
+    title: 'Learners Hub',
+    description: 'The primary home for our trainees. A focused environment to learn development, design, and digital skills through structured guidance.',
+    icon: BookOpen,
   }
 ];
 
@@ -123,10 +124,10 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: '3',
-    name: 'Insights Room Tee (Black)',
+    name: 'Learners Hub Tee (Black)',
     type: 'T-Shirt',
     price: 'KES 1,500',
-    description: 'For the thinkers and strategists. A sleek black tee featuring a minimalist bulb design.',
+    description: 'For the learners and the curious minds. A sleek black tee featuring a book-inspired minimalist design.',
     image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=800',
     sizes: ['S', 'M', 'L', 'XL'],
   },
